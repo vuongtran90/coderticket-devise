@@ -23,7 +23,12 @@ default: &default
 
 development:
   <<: *default
-  database: CoderTicket_development
+  database: CoderTicket
+  adapter: postgresql
+  encoding: SQL_ASCII
+  pool: 5
+  username: ubuntu
+  password: 123123
 
   # The specified database role being used to connect to postgres.
   # To create additional roles in postgres see `$ createuser --help`.
