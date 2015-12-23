@@ -1,0 +1,11 @@
+<p>NEW MESSAGE</p>
+    	<%= form_for :event, url: events_path do |f| %>
+    	<%= f.text_field :starts_at, placeholder: "START AT" %>
+    	<%= f.text_field :ends_at, placeholder: "END AT" %>
+    	<%= f.text_field :venue_id, placeholder: "VENUE" %>
+    	<%= f.text_field :hero_image_url, placeholder: "HERO IMG" %>
+		<%= f.text_area :extended_html_description,  id: "url", placeholder: "MESSAGE" %>
+		<%= f.submit "SEND", :class => 'inputSubmit' %>
+
+
+	<% end %>
