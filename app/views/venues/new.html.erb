@@ -1,0 +1,7 @@
+<p>NEW VENUE</p>
+    	<%= form_for :venue, url: venues_path do |f| %>
+    	<%= f.text_field :name, placeholder: "Name" %>
+    	<%= f.text_field :full_address, placeholder: "Full Address" %>
+    	<%= f.text_field :region_id, placeholder: "Region Id" %>
+		<%= f.submit "Create" %>
+	<% end %>
