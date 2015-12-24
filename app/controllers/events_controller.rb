@@ -11,6 +11,7 @@ class EventsController < ApplicationController
   
   def new
     @event = Event.new
+    # @user = current_user
   end
   
   def create
@@ -26,7 +27,7 @@ class EventsController < ApplicationController
   end
   
   def event_params
-    params.require(:event).permit(:starts_at, :ends_at, :hero_image_url, :extended_html_description, :name)
+    params.require(:event).permit(:starts_at, :ends_at, :hero_image_url, :extended_html_description, :name, :user_id, :category_id, :venue_id)
   end
   
 end
