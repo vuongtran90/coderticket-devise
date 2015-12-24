@@ -7,7 +7,7 @@
   </div>
 </div>
 <div class="container-fluid events-list">
-    <% @events.in_groups_of(3) do |g| %>
+    <% @events.in_groups_of(5) do |g| %>
       <div class="row">
         <% g.compact.each do |e| %>
             <%= render partial: 'card', locals: {event: e} %>
