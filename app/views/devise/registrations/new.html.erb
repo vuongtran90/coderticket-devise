@@ -1,23 +1,21 @@
 <div class="events-header" style="background-image: url(https://az810058.vo.msecnd.net/site/global/Content/img/home-search-bg-05.jpg)">
-</div>
-<div class="container-fluid events-list">
 <h2>Sign up</h2>
+</div>
+<div class="container pT30 pB30 alc w40">
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :username, required: true, autofocus: true %>
-    <%= f.input :email, required: true, autofocus: true %>
-    <%= f.input :password, required: true, hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length) %>
-    <%= f.input :password_confirmation, required: true %>
+    <%= f.input :username, required: true, autofocus: true, label: false, :placeholder => "User Name" %>
+    <%= f.input :email, required: true, autofocus: true, label: false , :placeholder => "Email"%>
+    <%= f.input :password, required: true, label: false, :placeholder => "Password" %>
+    <%= f.input :password_confirmation, required: true, label: false, :placeholder => "Confirm Password" %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Sign up" %>
+    <%= f.button :submit, "Sign up",:class => "btn btn-lg btn-block btn-primary-outline" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
 </div>
 </div>

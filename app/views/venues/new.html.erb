@@ -1,3 +1,6 @@
+<div class="events-header" style="background-image: url(https://az810058.vo.msecnd.net/site/global/Content/img/home-search-bg-05.jpg)">
+</div>
+<div class="container-fluid events-list">
 <p>NEW VENUE</p>
     	<%= form_for :venue, url: venues_path do |f| %>
     	<%= f.text_field :name, placeholder: "Name" %>
@@ -5,3 +8,4 @@
     	<%= f.text_field :region_id, placeholder: "Region Id" %>
 		<%= f.submit "Create" %>
 	<% end %>
+</div>

@@ -12,12 +12,25 @@
 body {
   font-family: 'Open Sans';
 }
+.nav {
+  float: right;
+}
 .btn.btn-danger {
   background-color: rgb(216, 87, 66);
   border: 2px solid rgb(241, 112, 91);
 }
-.pT80 {
-padding-top: 80px;
+.pT30 {
+padding-top: 30px;
+}
+.pB30 {
+padding-bottom: 30px;
+}
+.alc {
+text-align: center;
+}
+.w40 {
+width: 40%;
+min-width: 200px;
 }
 .formWrapper {
 width: 80%;

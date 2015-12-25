@@ -1,20 +1,17 @@
 <div class="events-header" style="background-image: url(https://az810058.vo.msecnd.net/site/global/Content/img/home-search-bg-05.jpg)">
-
-</div>
-<div class="container-fluid events-list">
 <h2>Log in</h2>
-
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email, required: false, autofocus: true %>
-    <%= f.input :password, required: false %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+</div>
+<div class="container pT30 pB30 alc w40">
+  
+  <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+    <div class="form-inputs">
+      <%= f.input :email, required: false, autofocus: true, label: false, :placeholder => "Email" %>
+      <%= f.input :password, required: false, label: false, :placeholder => "Password" %>
+      <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
+    </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
+    <%= f.button :submit, "Log in", :class => "btn btn-lg btn-block btn-primary-outline" %>
   </div>
 <% end %>
-
-<%= render "devise/shared/links" %>
 </div>

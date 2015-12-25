@@ -1,12 +1,36 @@
-<p>NEW EVENT</p>
-    	<%= form_for :event, url: events_path do |f| %>
-    	<%= f.text_field :name, placeholder: "NAME" %>
-    	<%= f.text_field :venue_id, placeholder: "VENUE ID" %>
-    	<%= f.text_field :category_id, placeholder: "CATEGORY ID" %>
-    	<%= f.text_field :user_id, placeholder: "USER ID" %>
-    	<%= f.text_field :starts_at, placeholder: "START AT" %>
-    	<%= f.text_field :ends_at, placeholder: "END AT" %>
-    	<%= f.text_field :hero_image_url, placeholder: "HERO IMAGE" %>
-		<%= f.text_area :extended_html_description,  id: "url", placeholder: "MESSAGE" %>
-		<%= f.submit "SEND" %>
-	<% end %>
+<div class="events-header" style="background-image: url(https://az810058.vo.msecnd.net/site/global/Content/img/home-search-bg-05.jpg)">
+<h2>New Event</h2>
+</div>
+<div class="container pT30 pB30 alc w40">
+    <div class="form-inputs">
+	<%= form_for :event, url: events_path do |f| %>
+		<div class="form-group">
+		<%= f.text_field :name, placeholder: "Name", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :venue_id, placeholder: "Venue Id", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :category_id, placeholder: "Category Id", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :user_id, placeholder: "User Id", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :starts_at, placeholder: "Starts At" , :class => "form-control"%>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :ends_at, placeholder: "End At", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_field :hero_image_url, placeholder: "Hero Image", :class => "form-control" %>
+		</div>
+		<div class="form-group">
+		<%= f.text_area :extended_html_description,  id: "url", placeholder: "Description", :class => "form-control" %>
+		</div>
+		<div class="form-action">
+		<%= f.submit "Submit", :class => "btn btn-lg btn-block btn-primary-outline" %>
+		</div>
+		<% end %>
+	</div>
+</div>
