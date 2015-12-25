@@ -5,7 +5,7 @@ class EventsController < ApplicationController
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     else
-      @events = Event.where(:published => true)
+      @events = Event.where('starts_at >= ?', Date.today).where(:published => true)
     end
   end
   
