@@ -1,7 +1,7 @@
-
 class EventsController < ApplicationController
+  before_filter :authenticate_user!, except: [:index]
   def index
-    @events = Event.where('starts_at >= ?', Date.today).where(:published => true)
+    @events = Event.where('starts_at >= ?', Date.today).where(:published => true).where()
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     else

@@ -1,4 +1,5 @@
 class Event < ActiveRecord::Base
+  TICKET_TYPES_COUNT_MIN = 1
   # belongs_to :user
   belongs_to :venue
   belongs_to :category
@@ -11,4 +12,17 @@ class Event < ActiveRecord::Base
     where("name LIKE ?", "%#{search}%")
   end
   
+  validate do
+    check_ticket_types_number
+  end
+  private
+  def ticket_types_count_valid?
+    ticket_types.count >= TICKET_TYPES_COUNT_MIN
+  end
+  
+  def check_ticket_types_number
+    unless ticket_types_count_valid?
+      errors.add(:base, :ticket_types_too_short, :count => TICKET_TYPES_COUNT_MIN)
+    end
+  end
 end
