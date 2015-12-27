@@ -1,12 +1,12 @@
-# Homework 3 - *Name of App*
+# Homework 3 - CoderTicket
 
-**Name of your app** is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
+CoderTicket is a Ruby on Rails blog application that allows users to create and buy tickets to cool events. 
 
-Submitted by: **Your Name Here**
+Submitted by: Vuong Tran
 
-Time spent: **X** hours
+Time spent: 26 hours
 
-URL: **Insert your Heroku URL here**
+URL: https://coderticket-devise.herokuapp.com/
 
 SimpleCov Test Coverage: **Insert percentage or link to report here**
 
@@ -35,7 +35,7 @@ The following **required** functionality is complete:
 
 * [x] User can sign up by providing their email, password, and name. 
 * [x] User can login using an email and password. 
-* [x] Users can create events. 
+* [ ] Users can create events. 
 * [ ] Users must click "publish event" before an event becomes viewable to other users. 
 * [ ] Users can create ticket types for that event. 
 * [ ] Users can create venues.
