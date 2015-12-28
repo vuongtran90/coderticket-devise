@@ -1,6 +1,6 @@
 class Event < ActiveRecord::Base
   TICKET_TYPES_COUNT_MIN = 1
-  # belongs_to :user
+  belongs_to :user
   belongs_to :venue
   belongs_to :category
   has_many :ticket_types
