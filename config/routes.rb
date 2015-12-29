@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'events#index'
   resources :venues
+  resources :event_users
   resources :events do
     resources :tickets
   end

@@ -5,29 +5,36 @@ class EventsController < ApplicationController
     if params[:search]
       @events = Event.search(params[:search]).order("created_at DESC")
     end
+    # @user_events = current_user.events
   end
   
   def new
-    @event = Event.new
-    # @user = current_user
-  end
-  
-  def create
-    @event =Event.new(event_params)
-    if @event.save
-      redirect_to @event
-    else render 'new'
-    end
-  end
-  
+		@event = Event.new
+		@user = current_user
+	end
+
+	def create
+		@event = current_user.events.build(event_params)
+
+		if @event.save
+			flash[:success] = "Message Sent!"
+			redirect_to root_path
+		else
+			flash[:alert] = "Fail!"
+			render :new
+		end
+	end
+	
   def show
     @event = Event.find(params[:id])
   end
   
-  def event_params
-    params.require(:event).permit(:starts_at, :ends_at, :hero_image_url, :extended_html_description, :name, :user_id, :category_id, :venue_id)
-  end
-  
+	private
+
+	def event_params
+		params.require(:event).permit(:starts_at, :ends_at, :venue_id, :hero_image_url, :extended_html_description, :category_id, :name)
+	end
+		
 end
 # class EventsController < ApplicationController
 #   before_action :authenticate_user!
